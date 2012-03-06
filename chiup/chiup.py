@@ -67,7 +67,11 @@ class Chiup (object):
         except Exception, e:
             raise e
 
-        basename = os.path.basename (egg_file)
+        if egg_file[-1] == os.path.sep:
+            basename = os.path.basename (egg_file[:-1])
+        else:
+            basename = os.path.basename (egg_file)
+
         data = {
                 ':action' : 'file_upload',
                 'protcol_version' : '1',
