@@ -152,7 +152,6 @@ def main ():
     parser.add_option ('-p', '--password', action = 'store', type = 'string', dest = 'password', help = 'The password of username')
 
     options, args = parser.parse_args ()
-    print type (options)
 
     chiup = Chiup (options.repository, options.site, options.username, options.password)
 
